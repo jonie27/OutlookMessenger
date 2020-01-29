@@ -1,0 +1,27 @@
+Sub CreateMessage()
+    Dim htmlBody As String
+    Dim fileAttach As Outlook.Attachment
+    
+    Dim newMail As Outlook.MailItem
+    Set newMail = Application.CreateItem(olMailItem)
+
+
+
+    htmlBody = "<tr><td colspan=2 valign=top style='padding:80'> <h3> Macro testing </h3><br><br>" + _
+        "Hello world." + _
+        "<br><br>Best Regards,<br><br><hr>Sasha<br><br></tr>"
+
+    
+    With newMail
+        .Subject = "[Announce] " + Format(Date, "dd.mm.yyyy, dddd")
+        .To = "test@test.com"
+        .CC = "test@test.com"
+        .BCC = "test@test.com"
+        .BodyFormat = olFormatHTML
+        .htmlBody = htmlBody
+        .Display
+    End With
+    Set newMail = Nothing
+
+
+End Sub
