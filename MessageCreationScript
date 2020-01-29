@@ -13,7 +13,7 @@ Sub CreateMessage()
 
     
     With newMail
-        .Subject = "[Announce] " + Format(Date, "dd.mm.yyyy, dddd")
+        .Subject = "Hello world!" + Format(Date, "dd.mm.yyyy, dddd")
         .To = "test@test.com"
         .CC = "test@test.com"
         .BCC = "test@test.com"
